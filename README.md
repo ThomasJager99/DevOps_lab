@@ -10,6 +10,7 @@ It represents a cleaned and documented reference architecture based on a real ho
 ## Goals
 
 - Practice Docker and docker-compose
+- Prepare foundation for Kubernetes (containerization, networking, storage concepts)
 - Design persistent storage for containers
 - Separate infrastructure from application data
 - Implement and automate backups
@@ -129,6 +130,7 @@ The goal is to document operational thinking, not just configuration.
 
 This lab is actively evolving.
 Structure and documentation improve over time as new topics are learned.
+Kubernetes is planned as a next step after stabilizing the Docker-based setup.
 
 ---
 
