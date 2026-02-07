@@ -1,3 +1,85 @@
+_____________________________
+
+📅 Date: 2026-02-XX
+🔧 Topic: Deploy nginx as a reverse proxy for internal services
+
+## Context
+A single entry point was required to expose selected internal services while
+keeping application containers isolated from direct host access.
+
+## What I did
+Deployed nginx as a reverse proxy container connected to the internal Docker
+network. Configured path-based routing to expose the Glances web interface
+through a single HTTP endpoint.
+
+## Tools involved
+- Docker
+- Docker Compose
+- nginx
+
+## Commands used
+- docker compose up -d
+- docker compose logs nginx
+- docker exec -it nginx nginx -t
+
+## Config / Files changed
+- docker-compose.example.yml
+- nginx.conf
+
+## Why
+Using a reverse proxy centralizes ingress traffic and reduces the attack surface
+by exposing only one service to the host. Path-based routing allows multiple
+internal services to be accessed without publishing additional ports.
+
+## Result
+nginx successfully routed HTTP requests from the host to the internal Glances
+service while keeping Glances inaccessible directly from the host network.
+
+## Lessons learned
+- Reverse proxies simplify service exposure and access control
+- Internal-only services can still be safely accessed through controlled ingress
+_____________________________
+
+📅 Date: 2026-02-XX
+🔧 Topic: Deploy Glances for container and host monitoring
+
+## Context
+A lightweight monitoring solution was required to observe system resource usage
+and container-level metrics within a Docker-based infrastructure.
+
+## What I did
+Deployed Glances as a Docker container with access to Docker metrics and host
+system information. The service was connected to the internal Docker network and
+configured for read-only access to system resources where possible.
+
+## Tools involved
+- Docker
+- Docker Compose
+- Linux system interfaces
+
+## Commands used
+- docker compose up -d
+- docker compose logs glances
+
+## Config / Files changed
+- docker-compose.example.yml
+- .env.example
+
+## Why
+Running Glances in a container provides a simple and reproducible way to monitor
+system and container metrics without installing additional tooling on the host.
+Read-only mounts reduce risk while still allowing visibility into system state.
+
+## Result
+The Glances service started successfully and exposed real-time monitoring data
+for the host and running containers within the internal network.
+
+## Lessons learned
+- Monitoring containers often require controlled access to host resources
+- Read-only mounts are sufficient for most observability use cases
+
+_____________________________
+
 📅 Date: 2026-02-XX
 🔧 Topic: Deploy Komga as a Docker service with persistent storage
 
