@@ -1,5 +1,8 @@
 # Komga
 
+![komga](../../assets/komga.svg)
+
+
 Komga is a self-hosted media server designed for managing and reading comics,
 manga, and graphic novels through a modern web interface.
 

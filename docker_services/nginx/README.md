@@ -1,5 +1,8 @@
 # nginx
 
+![nginx](../../assets/nginx.svg)
+
+
 nginx is used as a reverse proxy and the single ingress point for internal
 services running inside a Docker-based infrastructure.
 

@@ -1,5 +1,8 @@
 # Kavita
 
+![kavita](../../assets/kavita.svg)
+
+
 Kavita is a self-hosted digital library server for managing and reading e-books,
 comics, and manga through a web-based interface.
 
