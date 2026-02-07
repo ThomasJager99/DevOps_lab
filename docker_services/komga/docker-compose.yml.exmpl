@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  komga:
+    image: gotson/komga:latest
+    ports:
+      - "${KOMGA_PORT}:25600"
+    volumes:
+      - "${KOMGA_CONFIG}:/config"
+      - "${MEDIA_PATH}:/media:ro"
+    restart: unless-stopped
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
