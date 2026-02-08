@@ -1,5 +1,8 @@
 # DevOps Lab
 
+![octopus](assets/octopus.png)
+
+
 Personal DevOps homelab used to practice Docker, Linux, networking, storage and backup strategies.
 
 This repository does NOT contain real production data.
