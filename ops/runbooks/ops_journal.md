@@ -27,6 +27,18 @@ with unified logging.
 - ops/scripts/backup.sh
 - cron configuration (weekly schedule)
 
+## Cron Environment
+
+The cron job defines an explicit PATH variable.
+This is required because cron runs with a minimal environment and does not
+inherit the user's interactive shell PATH.
+
+Defining PATH explicitly ensures that all required binaries (rsync, bash,
+coreutils) are resolved correctly during execution.
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+0 15 * * 0 /bin/bash /home/user/ops/scripts/backup.sh
+
 ## Why
 Manual backups were error-prone and did not scale with system complexity.
 Using rsync allows incremental backups, clear visibility of changes, and
