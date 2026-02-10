@@ -1,6 +1,50 @@
 _____________________________
 
 📅 Date: 2026-02-XX
+🔧 Topic: Create rsync-based backup script for infra and application data
+
+## Context
+The system consists of containerized services with separated infrastructure
+definitions and persistent application data. A reliable and repeatable backup
+mechanism was required after moving to a clear infra/data separation model.
+
+## What I did
+Created a shell script using rsync to back up infrastructure files and
+application data into separate directories on a backup storage location,
+with unified logging.
+
+## Tools involved
+- bash
+- rsync
+- cron
+
+## Commands used
+- rsync -avh --delete --itemize-changes
+- mountpoint
+- mkdir
+
+## Config / Files changed
+- ops/scripts/backup.sh
+- cron configuration (weekly schedule)
+
+## Why
+Manual backups were error-prone and did not scale with system complexity.
+Using rsync allows incremental backups, clear visibility of changes, and
+independent restore of infra and application data. Separating infra and data
+reduces blast radius during restore operations.
+
+## Result
+A repeatable and automated backup process was established.
+Infrastructure and application data are backed up independently with
+consistent logging and verification points.
+
+## Lessons learned
+Backups must reflect system structure.
+Separating infra and data at backup level simplifies restore and troubleshooting.
+
+_____________________________
+
+📅 Date: 2026-02-XX
 🔧 Topic: Deploy nginx as a reverse proxy for internal services
 
 ## Context
