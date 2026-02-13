@@ -1,7 +1,7 @@
 MySQL Service
 
 <p align="center">
-  <img src="../../assets/mysql_logo.png" width="180">
+  <img src="../../assets/mysql-logo.png" width="180">
 </p>
 
 <br>
