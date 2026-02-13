@@ -1,5 +1,57 @@
 _____________________________
 
+📅 Date: 2026-02-13
+🔧 Topic: Deploy MySQL container with isolated Docker network
+
+##Context
+
+Local DevOps lab infrastructure. Database layer required for development and
+service separation testing.
+
+##What I did
+
+Deployed MySQL 8.0 container using Docker Compose.
+Created a dedicated Docker network for database isolation.
+Exposed port 3306 to localhost for development access.
+Configured credentials via external .env file.
+Enabled persistent storage using a named Docker volume.
+
+##Tools involved
+	•	Docker
+	•	Docker Compose
+	•	MySQL official image
+
+##Commands used
+	•	docker network create mysql_network
+	•	docker compose up -d
+	•	docker compose ps
+	•	docker logs mysql
+
+##Config / Files changed
+	•	docker_compose_services/mysql/docker-compose.yml.exmpl
+	•	docker_compose_services/mysql/.env.exmpl
+
+##Why
+
+Separating the database into its own Docker network improves isolation and
+prevents unintended cross-service exposure.
+Using a named volume ensures persistent storage independent of container
+lifecycle.
+Using an .env file keeps credentials outside the compose definition.
+
+##Result
+
+A running MySQL container with persistent storage and controlled network
+isolation.
+Database accessible locally via port 3306.
+
+##Lessons learned
+
+Infrastructure layers should be logically separated early to simplify scaling,
+security management, and service architecture evolution.
+
+_____________________________
+
 📅 Date: 2026-02-XX
 🔧 Topic: Create rsync-based backup script for infra and application data
 
