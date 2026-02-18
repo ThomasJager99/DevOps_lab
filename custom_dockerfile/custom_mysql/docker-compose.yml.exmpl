@@ -1,0 +1,52 @@
+services:
+
+  # Service name
+  custom-db:
+
+    # Build image from local Dockerfile
+    build:
+      context: .
+
+    # Resulting image name
+    image: custom_mysql:latest
+
+    container_name: custom_mysql
+    restart: unless-stopped
+
+    ports:
+      - "3306:3306"
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    # Named volume:
+    # Docker stores data internally under:
+    # /var/lib/docker/volumes/mysql_data/_data
+    #
+    # This is suitable when physical data access
+    # on host is not required.
+    #
+    # Backups are handled via mysqldump,
+    # not by copying raw database files.
+    #
+    # Example of bind mount (not used here):
+    #   - ./data:/var/lib/mysql
+    #
+    # WARNING:
+    # Do NOT use `docker compose down -v`
+    # as it removes named volumes and deletes data.
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - your_network
+
+volumes:
+  mysql_data:
+
+networks:
+  your_network:
+    external: true
