@@ -10,7 +10,7 @@ Conduct a controlled Docker experiment to demonstrate:
 	•	Proper CLI container design (ENTRYPOINT vs CMD)
 
 ⸻
-
+"""
 📁 Project Structure
 
 multistage_keygen/
@@ -21,7 +21,7 @@ multistage_keygen/
 ├── Dockerfile.fat
 ├── Dockerfile.slim
 └── README.md
-
+"""
 
 ⸻
 
