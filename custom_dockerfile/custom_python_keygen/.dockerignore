@@ -1,0 +1,46 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Git
+.git/
+.gitignore
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local build artifacts
+dist/
+build/
+*.egg-info/
+
+# Docker artifacts
+docker-compose.yml
+docker-compose.override.yml
+
+# Environment files
+.env
+
+# Generated files
+key.txt
+
+# Testing artifacts
+.coverage
+.pytest_cache/
