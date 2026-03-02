@@ -22,12 +22,6 @@ services:
     volumes:
       - ${MYSQL_DATA}:/var/lib/mysql
 
-    networks:
-      - mysql_network
-
-volumes:
-  mysql_data:
-
 networks:
   mysql_network:
     external: true
