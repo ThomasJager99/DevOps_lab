@@ -1,5 +1,113 @@
 _____________________________
 
+📅 Date: 2026-02-13
+🔧 Topic: Deploy multi-service stack (Nginx, MySQL, Redis) with healthchecks
+
+Context
+
+DevOps lab environment. A multi-service setup was required to demonstrate
+container networking, service dependencies, persistent storage, and health
+monitoring within a single Docker Compose stack.
+
+What I did
+
+Deployed a Docker Compose stack including Nginx, MySQL 8.0, and Redis 7.
+Configured a named volume for MySQL persistent storage.
+Configured a named volume for Redis data persistence.
+Connected all services to a dedicated external Docker network.
+Exposed selected service ports for local access.
+Added healthchecks for MySQL and Redis.
+Configured service dependencies using depends_on with health conditions.
+Moved sensitive configuration values into an external .env file.
+
+Tools involved
+	•	Docker
+	•	Docker Compose
+	•	Nginx (official image)
+	•	MySQL 8.0 (official image)
+	•	Redis 7 (official image)
+
+Commands used
+	•	docker network create test_media
+	•	docker compose up -d
+	•	docker compose ps
+	•	docker compose logs
+	•	docker inspect
+	•	docker stats
+
+Config / Files changed
+	•	docker-compose.yml.exmpl
+	•	.env.exmpl
+	•	nginx configuration file
+
+Why
+
+The stack demonstrates inter-container networking within a shared Docker
+network.
+Healthchecks ensure service availability visibility.
+Using named volumes provides data persistence independent of container
+lifecycle.
+Externalizing secrets into .env prevents credential exposure in version control.
+
+Result
+
+Multi-service stack successfully deployed.
+Services communicate over the internal Docker network.
+Health status is reported correctly.
+Persistent data stored in Docker-managed volumes.
+
+Lessons learned
+
+Service isolation, network segmentation, and health monitoring are essential
+foundations for production-oriented containerized environments.
+_____________________________
+
+📅 Date: 2026-02-13
+🔧 Topic: Harden MySQL deployment with healthcheck and resource limits
+
+Context
+
+Existing custom MySQL container required production-style improvements
+including health monitoring and memory constraints.
+
+What I did
+
+Added healthcheck configuration using mysqladmin ping.
+Configured memory limits to prevent uncontrolled resource consumption.
+Maintained external network isolation and persistent named volume.
+
+Tools involved
+	•	Docker Compose
+	•	MySQL 8
+	•	mysqladmin
+
+Commands used
+	•	docker compose up -d
+	•	docker inspect custom_mysql
+	•	docker stats
+
+Config / Files changed
+	•	docker-compose.yml
+
+Why
+
+Healthchecks allow runtime status visibility and better container lifecycle
+control.
+Memory limits prevent database container from exhausting host resources.
+Production-style configuration improves operational predictability.
+
+Result
+
+Container reports healthy/unhealthy state correctly.
+Memory usage is constrained.
+Deployment behaves closer to production standards.
+
+Lessons learned
+
+Healthchecks and resource limits are essential even in local DevOps labs to
+simulate real production environments.
+_____________________________
+
 📅 Date: 2026-02-xx
 🔧 Topic: Build custom MySQL image with configuration and init script
 
