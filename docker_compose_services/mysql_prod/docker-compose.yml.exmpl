@@ -24,6 +24,17 @@ services:
     mem_limit: 1g
     cpus: 1.0
 
+# Not using this section because Docker Swarm is not in use.
+# The "deploy" configuration is only applied in Swarm mode.
+# In standalone Docker Compose, resource limits must be defined
+# using mem_limit and cpus instead.
+
+  # deploy:
+  #   resources:
+  #     limits:
+  #       cpus: "1.0"
+  #       memory: 1G
+
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
