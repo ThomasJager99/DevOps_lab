@@ -84,6 +84,10 @@ The monitoring stack follows a pull-based metrics model:
 Prometheus communicates with exporters internally through the Docker network,
 while only Grafana is exposed through the reverse proxy.
 
+The monitoring example:
+
+[Monitoring Setup Guide](docker_compose_services/monitoring)
+
 ---
 
 ## Repository Structure
