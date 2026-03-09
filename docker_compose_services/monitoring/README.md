@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <img src="../../assets/cadviser.png" width="180">
+  <img src="../../assets/cadvisor.png" width="180">
 </p>
 
 <br>
