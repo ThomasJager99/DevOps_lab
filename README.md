@@ -38,6 +38,54 @@ Main components:
 
 ---
 
+## Monitoring
+
+                          ┌─────────────────────────┐
+                          │        Users / UI       │
+                          │        Browser          │
+                          └─────────────┬───────────┘
+                                        │
+                                        │ HTTP
+                                        ▼
+                          ┌─────────────────────────┐
+                          │          Nginx          │
+                          │      Reverse Proxy      │
+                          └─────────────┬───────────┘
+                                        │
+                                        ▼
+                                ┌───────────────┐
+                                │    Grafana    │
+                                │   Dashboards  │
+                                └───────┬───────┘
+                                        │
+                                        │ queries
+                                        ▼
+                               ┌─────────────────┐
+                               │    Prometheus   │
+                               │ Metrics Storage │
+                               └─────────┬───────┘
+                                         │
+                          ┌──────────────┴──────────────┐
+                          │                             │
+                          ▼                             ▼
+                 ┌────────────────┐            ┌─────────────────┐
+                 │    cAdvisor    │            │   Node Exporter │
+                 │ Container Stats│            │   Host Metrics  │
+                 └────────────────┘            └─────────────────┘
+
+The monitoring stack follows a pull-based metrics model:
+
+- **Node Exporter** exposes host system metrics
+- **cAdvisor** exposes container resource metrics
+- **Prometheus** scrapes metrics from both services
+- **Grafana** queries Prometheus to visualize metrics
+- **Nginx** acts as a reverse proxy exposing only the Grafana interface
+
+Prometheus communicates with exporters internally through the Docker network,
+while only Grafana is exposed through the reverse proxy.
+
+---
+
 ## Repository Structure
 
 docker_services/  
