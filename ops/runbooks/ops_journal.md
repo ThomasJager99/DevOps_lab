@@ -1,5 +1,57 @@
 _____________________________
 
+
+📅 Date: 2026-03-XX
+🔧 Topic: Deploy monitoring stack with Prometheus, Grafana, Node Exporter and cAdvisor
+
+## Context
+Monitoring capabilities were required to observe host system metrics
+and container resource usage within the Docker-based infrastructure.
+
+## What I did
+Deployed a monitoring stack consisting of Prometheus, Grafana,
+Node Exporter and cAdvisor using Docker Compose.
+
+Configured Prometheus to scrape metrics from Node Exporter and
+cAdvisor services.
+
+Connected all services through a dedicated Docker network.
+
+## Tools involved
+- Docker
+- Docker Compose
+- Prometheus
+- Grafana
+- Node Exporter
+- cAdvisor
+
+## Commands used
+- docker network create monitoring_network
+- docker compose up -d
+- docker compose ps
+- docker compose logs
+
+## Config / Files changed
+- docker-compose.yml.exmpl
+- prometheus.yml
+- README.md
+
+## Why
+The monitoring stack provides visibility into system performance and
+container resource consumption. This allows observing infrastructure
+behavior and detecting potential performance issues.
+
+## Result
+Prometheus successfully collects metrics from Node Exporter and
+cAdvisor. Grafana visualizes collected metrics via dashboards.
+
+## Lessons learned
+Containerized monitoring stacks provide a flexible and portable way
+to observe infrastructure behavior in development and production
+environments.
+
+_____________________________
+
 📅 Date: 2026-02-13
 🔧 Topic: Deploy multi-service stack (Nginx, MySQL, Redis) with healthchecks
 
