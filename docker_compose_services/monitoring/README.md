@@ -35,6 +35,24 @@ All services are connected through a shared Docker network.
 
 ---
 
+## Fix: Container Names Missing in Grafana
+
+During initial deployment the Grafana dashboards displayed container IDs
+instead of human-readable container names.
+
+Investigation showed that cAdvisor was communicating with the Docker daemon
+using an outdated Docker API version.
+
+Older cAdvisor images used Docker API **v1.41**, while the host Docker daemon
+exposed **v1.45**. Because of this mismatch cAdvisor could only read container
+cgroup data and not Docker metadata such as container names and labels.
+
+Updating the cAdvisor image resolved the issue.
+
+After the update Prometheus successfully scraped container labels and Grafana
+dashboards displayed proper container names.
+
+---
 ## Components
 
 ### Prometheus
