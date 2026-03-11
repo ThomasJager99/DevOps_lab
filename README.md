@@ -45,7 +45,6 @@ Main components:
                           │        Browser          │
                           └─────────────┬───────────┘
                                         │
-                                        │ HTTP
                                         ▼
                           ┌─────────────────────────┐
                           │          Nginx          │
@@ -58,31 +57,42 @@ Main components:
                                 │   Dashboards  │
                                 └───────┬───────┘
                                         │
-                                        │ queries
-                                        ▼
-                               ┌─────────────────┐
-                               │    Prometheus   │
-                               │ Metrics Storage │
-                               └─────────┬───────┘
-                                         │
-                          ┌──────────────┴──────────────┐
-                          │                             │
-                          ▼                             ▼
-                 ┌────────────────┐            ┌─────────────────┐
-                 │    cAdvisor    │            │   Node Exporter │
-                 │ Container Stats│            │   Host Metrics  │
-                 └────────────────┘            └─────────────────┘
+                     ┌──────────────────┴──────────────────┐
+                     │                                     │
+                     ▼                                     ▼
+              ┌───────────────┐                     ┌──────────────┐
+              │  Prometheus   │                     │     Loki     │
+              │ Metrics Store │                     │  Log Storage │
+              └───────┬───────┘                     └──────┬───────┘
+                      │                                     │
+          ┌───────────┴───────────┐                         │
+          │                       │                         │
+          ▼                       ▼                         ▼
+   ┌──────────────┐       ┌───────────────┐         ┌───────────────┐
+   │   cAdvisor   │       │ Node Exporter │         │    Promtail   │
+   │Container Stats│      │ Host Metrics  │         │  Log Collector│
+   └──────────────┘       └───────────────┘         └───────────────┘
+                                                        │
+                                                        ▼
+                                               Docker container logs
 
-The monitoring stack follows a pull-based metrics model:
+The monitoring stack combines metrics and log collection.
+
+Metrics pipeline:
 
 - **Node Exporter** exposes host system metrics
 - **cAdvisor** exposes container resource metrics
 - **Prometheus** scrapes metrics from both services
 - **Grafana** queries Prometheus to visualize metrics
-- **Nginx** acts as a reverse proxy exposing only the Grafana interface
 
-Prometheus communicates with exporters internally through the Docker network,
-while only Grafana is exposed through the reverse proxy.
+Logging pipeline:
+
+- **Promtail** collects logs from Docker containers
+- **Loki** stores and indexes log data
+- **Grafana** queries Loki to visualize logs
+
+Only **Grafana** is exposed externally through the reverse proxy.
+All other services communicate internally through the Docker network.
 
 The monitoring example:
 
