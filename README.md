@@ -39,13 +39,7 @@ Main components:
 ---
 
 ## Monitoring
-
-                          ┌─────────────────────────┐
-                          │        Users / UI       │
-                          │        Browser          │
-                          └─────────────┬───────────┘
-                                        │
-                                        ▼
+```
                           ┌─────────────────────────┐
                           │          Nginx          │
                           │      Reverse Proxy      │
@@ -75,7 +69,7 @@ Main components:
                                                         │
                                                         ▼
                                                Docker container logs
-
+```
 The monitoring stack combines metrics and log collection.
 
 Metrics pipeline:
