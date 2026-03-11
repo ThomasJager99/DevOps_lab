@@ -93,7 +93,7 @@ The monitoring example:
 ## Infrastructure Dashboard
 
 <p align="center">
-  <img src="/assets/homepage.png" width="180">
+  <img src="assets/homepage.png" width="180">
 </p>
 
 <br>
