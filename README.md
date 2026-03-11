@@ -90,6 +90,36 @@ The monitoring example:
 
 ---
 
+## Infrastructure Dashboard
+
+<p align="center">
+  <img src="assets/homepage.png" width="180">
+</p>
+
+<br>
+
+A lightweight dashboard is deployed using **Homepage** to provide a central
+entry point for internal services.
+
+The dashboard aggregates links to commonly used infrastructure components such as:
+
+- monitoring (Grafana)
+- service interfaces
+- development tools
+- internal applications
+
+This allows quick navigation across the self-hosted environment without
+exposing multiple ports or remembering individual service URLs.
+
+Example deployment configuration is available in:
+
+docker_compose_services/homepage/
+
+Example configuration:
+[docker_compose_services/homepage](docker_compose_services/homepage)
+
+---
+
 ## Repository Structure
 
 docker_services/  
