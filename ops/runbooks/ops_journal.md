@@ -1,6 +1,49 @@
 _____________________________
 
 
+📅 Date: 2026-02-XX
+🔧 Topic: Deploy Homepage dashboard service
+
+## Context
+A simple web dashboard was required to organize and access internal services
+running inside the infrastructure environment.
+
+## What I did
+Deployed Homepage as a containerized dashboard application using Docker
+Compose. Configured the service with persistent storage and exposed it
+through a dedicated HTTP port.
+
+## Tools involved
+- Docker
+- Docker Compose
+- Homepage
+
+## Commands used
+- docker compose up -d
+- docker compose logs homepage
+- docker ps
+
+## Config / Files changed
+- docker-compose.yml.exmpl
+- .env.exmpl
+
+## Why
+Homepage provides a lightweight interface to organize internal tools and
+services. It simplifies navigation between infrastructure components and
+improves operational visibility.
+
+## Result
+Homepage successfully deployed and exposed through the configured port.
+The dashboard can now be used to centralize access to internal services.
+
+## Lessons learned
+Even simple infrastructure tools benefit from standardized deployment
+patterns including logging policies, health checks and resource limits.
+
+
+_____________________________
+
+
 📅 Date: 2026-03-XX
 🔧 Topic: Deploy monitoring stack with Prometheus, Grafana, Node Exporter and cAdvisor
 
