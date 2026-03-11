@@ -19,142 +19,94 @@
 <br>
 
 
+This directory contains an example deployment of a monitoring and logging
+stack used to observe containerized infrastructure.
 
+The stack collects system metrics, container metrics and logs, and provides
+a centralized interface for visualization and analysis.
 
-This directory contains an example monitoring stack deployed with
-Docker Compose.
-
-The stack includes:
-
-- Prometheus for metrics collection
-- Grafana for visualization
-- Node Exporter for host system metrics
-- cAdvisor for container metrics
-
-All services are connected through a shared Docker network.
-
----
-
-## Fix: Container Names Missing in Grafana
-
-During initial deployment the Grafana dashboards displayed container IDs
-instead of human-readable container names.
-
-Investigation showed that cAdvisor was communicating with the Docker daemon
-using an outdated Docker API version.
-
-Older cAdvisor images used Docker API **v1.41**, while the host Docker daemon
-exposed **v1.45**. Because of this mismatch cAdvisor could only read container
-cgroup data and not Docker metadata such as container names and labels.
-
-Updating the cAdvisor image resolved the issue.
-
-After the update Prometheus successfully scraped container labels and Grafana
-dashboards displayed proper container names.
-
----
 ## Components
 
-### Prometheus
+### Metrics collection
 
-Official image:
-https://hub.docker.com/r/prom/prometheus
+Prometheus is used as the main metrics collection and storage system.
 
-Prometheus collects metrics from configured targets using a pull model.
+Metrics are gathered from:
 
-Metrics sources in this setup:
+- Node Exporter — host system metrics
+- cAdvisor — container metrics
 
-- Node Exporter (host metrics)
-- cAdvisor (container metrics)
+Prometheus periodically scrapes these exporters and stores time-series data.
 
----
+### Logging
 
-### Grafana
+A centralized logging pipeline is provided using:
 
-Official image:
-https://hub.docker.com/r/grafana/grafana
+- Loki — log storage system
+- Promtail — log collector
 
-Grafana provides dashboards and visualization for metrics stored in
-Prometheus.
+Promtail reads container logs from the Docker host and forwards them to Loki.
+Grafana can then query Loki to visualize logs alongside metrics.
 
-After deployment Grafana is accessible on:
+### Visualization
 
-http://localhost:3000
+Grafana provides dashboards and query tools for both metrics and logs.
 
-Default credentials:
+Grafana connects to:
 
-admin / admin
+- Prometheus (metrics)
+- Loki (logs)
 
----
+This allows infrastructure monitoring and log inspection from a single
+interface.
 
-### Node Exporter
+## Stack Architecture
 
-Official image:
-https://hub.docker.com/r/prom/node-exporter
+Node Exporter ─┐
+│
+cAdvisor ──────┤
+▼
+Prometheus
+│
+▼
+Grafana
 
-Node Exporter exposes hardware and operating system metrics such as:
+Docker logs
+│
+▼
+Promtail
+│
+▼
+Loki
+│
+▼
+Grafana
 
-- CPU usage
-- memory
-- disk usage
-- network activity
+## Deployment Notes
 
----
+- Services run inside the same Docker network
+- Logging configuration is standardized using Docker logging driver limits
+- Health checks are used to ensure service availability
+- Resource limits are applied through environment variables
 
-### cAdvisor
+## Example Configuration
 
-Official image:
-https://github.com/google/cadvisor
+Deployment configuration is available in:
 
-cAdvisor provides container-level metrics including:
+docker-compose.yml.exmpl
+.env.exmpl
 
-- container CPU usage
-- memory consumption
-- filesystem usage
-- network activity
-
----
-
-## Network
-
-All services are attached to an external Docker network.
-
-Create the network before deployment:
-
-docker network create monitoring_network
-
----
-
-## Deployment
-
-Start the monitoring stack:
-
-docker compose up -d
-
-Check running services:
-
-docker compose ps
-
-View logs:
-
-docker compose logs
-
----
-
-## What This Demonstrates
-
-This setup demonstrates a common DevOps monitoring architecture including:
-
-- host metrics collection
-- container metrics monitoring
-- centralized metrics storage
-- dashboard visualization
-- containerized monitoring infrastructure
-
----
+These files demonstrate a reproducible monitoring stack that can be deployed
+using Docker Compose.
 
 ## Thanks
 
-Thanks to the maintainers of Prometheus, Grafana,
-Node Exporter and cAdvisor for providing powerful open-source
-monitoring tools widely used in modern infrastructure.
+Thanks to the maintainers of the following projects:
+
+- Prometheus
+- Grafana
+- Loki
+- Node Exporter
+- cAdvisor
+
+for providing powerful open-source observability tools.
