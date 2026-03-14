@@ -1,17 +1,40 @@
-version: "3.9"
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+x-healthcheck: &default-healthcheck
+  interval: 30s
+  timeout: 10s
+  retries: 3
+
+x-service-defaults: &service-defaults
+  restart: unless-stopped
+  logging: *default-logging
 
 services:
   komga:
-    image: gotson/komga:latest
+    <<: *service-defaults
+    image: ${KOMGA_IMAGE}
+
     ports:
       - "${KOMGA_PORT}:25600"
-    volumes:
-      - "${KOMGA_CONFIG}:/config"
-      - "${MEDIA_PATH}:/media:ro"
-    restart: unless-stopped
+
     networks:
-      - internal
+      - media_network
+
+    volumes:
+      - ${KOMGA_CONFIG}:/config
+      - ${MANGA_PATH}:/media:ro
+
+    mem_limit: ${KOMGA_MEM_LIMIT}
+    cpus: ${KOMGA_CPUS}
+
+    healthcheck:
+      <<: *default-healthcheck
+      test: ["CMD", "curl", "-f", "http://localhost:25600/actuator/health"]
 
 networks:
-  internal:
-    driver: bridge
+  media_network:
+    external: true
