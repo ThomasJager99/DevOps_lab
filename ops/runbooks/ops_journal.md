@@ -1,6 +1,39 @@
 _____________________________
 
 
+📅 Date: 2026-03-19  
+🔧 Topic: Trilium Notes container deployment  
+
+## Context
+Deployment of Trilium Notes as a lightweight personal knowledge base using Docker Compose.
+
+## What I did
+Created a Docker Compose service for Trilium Notes using a named volume for persistent storage.
+
+## Tools involved
+- Docker
+- Docker Compose
+
+## Commands used
+- docker compose up -d
+- docker logs trilium
+
+## Config / Files changed
+- docker-compose.yml
+- .env.example
+
+## Why
+Trilium requires persistent storage for notes. Named volumes provide portability and isolation from host filesystem paths.
+
+## Result
+Trilium is accessible via browser on configured port. Notes are stored persistently inside Docker volume.
+
+## Lessons learned
+Using named volumes simplifies deployment across different environments without relying on host-specific paths.
+
+_____________________________
+
+
 📅 Date: 2026-02-XX
 🔧 Topic: Deploy Homepage dashboard service
 
