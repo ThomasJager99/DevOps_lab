@@ -4,7 +4,6 @@
 
 <br>
 
-
 # Trilium Notes (Docker)
 
 This directory contains a Docker Compose setup for running **Trilium Notes** as a self-hosted knowledge base.
@@ -45,3 +44,51 @@ It supports:
 ## Storage
 
 All application data is stored inside the container at:
+
+/home/node/trilium-data
+
+Mapped to Docker volume:
+
+trilium_data
+
+---
+
+## Access
+
+After deployment, Trilium is available at:
+
+http://localhost:<TRILIUM_PORT>
+
+Example:
+
+http://localhost:8085
+
+---
+
+## Configuration
+
+Environment variables are defined in:
+
+.env.example
+
+Key parameters:
+
+- `TRILIUM_PORT` – exposed port
+- `TRILIUM_IMAGE` – container image
+- `TRILIUM_MEM` – memory limit
+- `TRILIUM_CPU` – CPU limit
+
+---
+
+## Notes
+
+- No external database required
+- Data is stored locally inside Docker volume
+- Suitable for personal usage and lightweight setups
+
+---
+
+## Thanks
+
+Thanks to the Trilium developers for providing a powerful and flexible knowledge management tool.
+
