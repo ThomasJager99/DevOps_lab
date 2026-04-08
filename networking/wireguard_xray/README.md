@@ -16,6 +16,19 @@ Two providers were used:
 
 ---
 
+## Update: Routing & Traffic Control
+
+Updated Xray configuration with basic traffic control and routing improvements.
+
+Changes:
+- Added IPv4-only routing (`domainStrategy: UseIPv4`)
+- Implemented `blackhole` outbound for blocked traffic
+- Added routing rule to block BitTorrent protocol
+
+This helps prevent unwanted traffic (e.g. torrents) and improves control over outbound connections.
+
+---
+
 ## Overview
 
 The infrastructure includes:
