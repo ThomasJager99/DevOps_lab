@@ -30,7 +30,7 @@ The configuration has been updated with additional control and observability fea
 - Implemented BitTorrent traffic blocking via routing rules
 - Forced IPv4 routing (`UseIPv4`)
 - Added automation script for user creation using `jq`
-
+- 'alias access="less +G /var/log/xray/access.log"'
 ### Logrotate
 
 Logs are rotated daily with compression to prevent disk overflow.
