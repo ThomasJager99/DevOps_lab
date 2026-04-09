@@ -1,6 +1,8 @@
-k{
+{
   "log": {
-    "loglevel": "warning"
+    "loglevel": "info",
+    "access": "/var/log/xray/access.log",
+    "error": "/var/log/xray/error.log"
   },
 
   "inbounds": [
@@ -11,7 +13,8 @@ k{
         "clients": [
           {
             "id": "UUID_HERE",
-            "flow": "xtls-rprx-vision"
+            "flow": "xtls-rprx-vision",
+            "email": "USERNAME"
           }
         ],
         "decryption": "none"
@@ -20,15 +23,13 @@ k{
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "show": false,
-          "dest": "www.apple.com:443",
-          "xver": 0,
-          "serverNames": [
-            "www.apple.com"
-          ],
           "privateKey": "PRIVATE_KEY_HERE",
+          "serverNames": [
+            "SNI_HOST"
+          ],
+          "dest": "SNI_HOST:443",
           "shortIds": [
-            "SHORT_ID_HERE"
+            "SHORT_ID"
           ]
         }
       }
