@@ -16,6 +16,46 @@ Two providers were used:
 
 ---
 
+## Update: Logging, Routing and User Management
+
+The configuration has been updated with additional control and observability features.
+
+### Changes
+
+- Added access and error logging:
+  - `/var/log/xray/access.log`
+  - `/var/log/xray/error.log`
+- Configured log rotation using system logrotate
+- Added `email` field for users to identify connections in logs
+- Implemented BitTorrent traffic blocking via routing rules
+- Forced IPv4 routing (`UseIPv4`)
+- Added automation script for user creation using `jq`
+
+### Logrotate
+
+Logs are rotated daily with compression to prevent disk overflow.
+
+### Automation
+
+User creation is automated via a script that:
+- Generates UUID
+- Updates JSON config using `jq`
+- Restarts Xray
+- Generates connection link
+
+### Note about jq
+
+`jq` is used to safely modify JSON configuration without breaking structure.
+
+## ⚠️ Privacy Notice
+
+This setup includes logging and user identification (via `email` field).
+
+This is NOT recommended for production VPN services focused on privacy.
+
+Logging and user tracking were implemented strictly for learning and debugging purposes.
+
+--
 ## Update: Routing & Traffic Control
 
 Updated Xray configuration with basic traffic control and routing improvements.
