@@ -1,7 +1,7 @@
 # Hetzner
 
 <p align="center">
-  <img src="../assets/hetzner.png" width="180">
+  <img src="../../../assets/hetzner.png" width="180">
 </p>
 
 
