@@ -1,0 +1,71 @@
+#cloud-config
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - curl
+  - unzip
+  - qrencode
+  - iptables
+  - iptables-persistent
+  - uuid-runtime
+
+write_files:
+  - path: /root/setup_xray.sh
+    permissions: "0755"
+    content: |
+      #!/bin/bash
+      set -e
+
+      cd /root
+
+      curl -LO https://github.com/XTLS/Xray-install/raw/main/install-release.sh
+      bash install-release.sh install
+
+      xray x25519 > /root/xray_x25519.txt
+      xray uuid > /root/uuid.main
+
+      grep PrivateKey /root/xray_x25519.txt | awk '{print $2}' > /root/private.key
+      grep Password /root/xray_x25519.txt | awk '{print $2}' > /root/public.key
+
+      PRIVATE_KEY=$(cat /root/private.key)
+      UUID_MAIN=$(cat /root/uuid.main)
+
+      cat > /usr/local/etc/xray/config.json <<EOF
+      {
+        "log": {
+          "loglevel": "warning"
+        },
+        "inbounds": [
+          {
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+              "clients": [
+                {
+                  "id": "${UUID_MAIN}",
+                  "flow": "xtls-rprx-vision"
+                }
+              ],
+              "decryption": "none"
+            },
+            "streamSettings": {
+              "network": "tcp",
+              "security": "reality",
+              "realitySettings": {
+                "privateKey": "${PRIVATE_KEY}",
+                "serverNames": ["www.cloudflare.com"],
+                "dest": "www.cloudflare.com:443",
+                "shortIds": ["0123456789abcdef"]
+              }
+            }
+          }
+        ],
+        "outbounds": [
+          {
+            "protocol": "freedom"
+          }
+        ]
+      }
+      EOF
