@@ -15,7 +15,35 @@ Two providers were used:
 - Hetzner (clean Xray deployment)
 
 ---
+## Update: add email field inside user add script.
 
+### Script: add_user_name.sh
+
+This script automates user creation for Xray VLESS (Reality) configuration.
+
+### Features
+
+- Generates a new UUID using `xray uuid`
+
+- Safely updates JSON config using `jq`
+
+- Adds a new client entry to Xray configuration
+
+- Restarts the Xray service
+
+- Generates a ready-to-use VLESS connection link
+
+- Displays QR code for quick client setup
+
+### Email Field Usage
+
+Unlike the basic version, this script adds an additional field:
+
+```json
+
+"email": "username"
+
+---
 ## Update: Logging, Routing and User Management
 
 The configuration has been updated with additional control and observability features.
@@ -56,6 +84,7 @@ This is NOT recommended for production VPN services focused on privacy.
 Logging and user tracking were implemented strictly for learning and debugging purposes.
 
 --
+
 ## Update: Routing & Traffic Control
 
 Updated Xray configuration with basic traffic control and routing improvements.
