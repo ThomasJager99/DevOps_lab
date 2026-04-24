@@ -16,11 +16,12 @@ It combines `rsync` for file-level backups with additional logic for snapshot cr
 
 ## Structure
 
+```
 backup_tools/
 ├── bash/
 │   └── backup.sh
 ├── pyth
-
+```
 ---
 
 ## Functionality
