@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/brain_readme.png" width="180">
+</p>
+
 # Backup Tools
 This directory contains backup scripts and related tooling used to maintain data integrity and ensure recoverability across the infrastructure.
 The goal of this module is to provide a simple, reproducible, and controlled backup system for both application data and infrastructure components.
