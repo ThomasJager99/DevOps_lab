@@ -20,7 +20,7 @@ It combines `rsync` for file-level backups with additional logic for snapshot cr
 backup_tools/
 ├── bash/
 │   └── backup.sh
-├── ponyth
+├- python
 ```
 ---
 
