@@ -94,6 +94,14 @@ The monitoring example:
 
 ---
 
+### Backup Implementation
+
+Backup scripts, snapshot logic, and retention strategy are implemented in:
+
+→ [backup_tools](./architecture/backup_system/)
+
+---
+
 ## Infrastructure Dashboard
 
 <p align="center">
