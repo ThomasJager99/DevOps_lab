@@ -8,7 +8,6 @@ PATHARCH="/tmp/Artem.z/Archive/"
 
 EXTPATH="/tmp/Artem.z/Extpath/"
 
-TIME=$(date +%T)
 
 DATE=$(date +%d-%m-%y)
 

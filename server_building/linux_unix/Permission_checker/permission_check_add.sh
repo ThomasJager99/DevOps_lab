@@ -4,7 +4,4 @@ set -e
 
 cd /home/user/Your_dir
 
-for NAMES in $(find . -type f -name "*.sh")
-do 
-chmod 744 "$NAMES" 
-done
+find . -type f -name "*.sh" -exec chmod 744 {} +
