@@ -22,7 +22,7 @@ jobs:
         run: pip install ruff
 
       - name: Lint (ruff check)
-        run: ruff check homelab-backup
+        run: ruff check python_authomatisation/backup_check
 
       - name: Format check (ruff format --check)
-        run: ruff format --check homelab-backup
+        run: ruff format --check python_authomatisation/backup_check
