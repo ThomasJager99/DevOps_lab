@@ -10,7 +10,7 @@ This repository does NOT contain real production data.
 It represents a cleaned and documented reference architecture based on a real home server.
 
 ![Shell Lint](https://github.com/ThomasJager99/DevOps_lab/actions/workflows/lint.yml/badge.svg)
-[Python Lint](https://github.com/ThomasJager99/DevOps_lab/actions/workflows/python-lint.yml/badge.svg)
+![Python Lint](https://github.com/ThomasJager99/DevOps_lab/actions/workflows/python-lint.yml/badge.svg)
 
 
 ---
