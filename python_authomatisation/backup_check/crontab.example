@@ -1,0 +1,11 @@
+# Homelab weekly backup guard.
+# Mounting a disk needs root, so install this in ROOT's crontab:
+#
+#   sudo crontab -e
+#
+# Then add the line below. It runs every Sunday at 03:00.
+# The script has its own logging, but we also redirect any stray output
+# to the same log so nothing is lost.
+#
+# min hour dom mon dow  command
+0 3 * * 0 /usr/bin/python3 /usr/local/bin/auto_backup.py >> /var/log/homelab_backup.log 2>&1

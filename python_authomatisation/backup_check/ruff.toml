@@ -1,0 +1,10 @@
+# Ruff config for the homelab backup scripts.
+# https://docs.astral.sh/ruff/
+
+target-version = "py312"
+line-length = 100
+
+[lint]
+# A sensible, not-too-noisy default set: pycodestyle errors/warnings (E, W),
+# pyflakes (F), isort (I), bugbear (B), and pyupgrade (UP).
+select = ["E", "W", "F", "I", "B", "UP"]
