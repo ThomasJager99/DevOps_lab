@@ -1,5 +1,11 @@
 # Homelab Weekly Backup Guard
 
+<p align="center">
+  <img src="../../assets/brain_readme.png" width="180">
+</p>
+
+<br>
+
 A small Python automation for a self-hosted homelab. Once a week `cron` runs
 [`auto_backup.py`](auto_backup.py), which makes sure the backup disk is mounted
 and healthy before handing off to an existing bash backup script.
