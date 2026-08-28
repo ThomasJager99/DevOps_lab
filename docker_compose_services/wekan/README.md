@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../../assets/wekan.png" width="180">
+  <img src="../../assets/wekan.svg" width="180">
 </p>
 
 <br>
