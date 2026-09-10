@@ -1,6 +1,5 @@
 This directory contains an example deployment of Vaultwarden, a lightweight, open-source password manager server that is fully compatible with the official Bitwarden clients. Vaultwarden runs your own private vault on your own server: you keep logins, passwords, TOTP two-factor codes, passkeys, secure notes and file attachments in one end-to-end-encrypted place, and reach them through the same Bitwarden browser extensions, desktop and mobile apps you'd use with the commercial service. Because it's a re-implementation of the Bitwarden server in Rust, it's tiny and happy on modest hardware, while your encrypted data never leaves a machine you control.
 
-## Image
 
 <p align="center">
   <img src="../../assets/vaultwarden-light.svg" width="180">
