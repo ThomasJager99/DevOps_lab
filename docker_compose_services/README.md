@@ -54,3 +54,33 @@ docker_compose_services/
 Each service folder keeps its own `docker-compose` file, example env and README,
 so it can be understood — and run — on its own. New services are added into the
 category they belong to, and listed in that category's README.
+
+---
+
+## Requirements
+
+Every stack here needs **Docker Engine** and the **Docker Compose v2** plugin
+(`docker compose`, with a space). The run commands are identical on any Linux
+distro — only the install step differs.
+
+Quickest cross-distro install (detects your distro):
+
+```bash
+curl -fsSL https://get.docker.com | sh
+```
+
+Or install from your distro's packages:
+
+| Distro | Install |
+|--------|---------|
+| Debian / Ubuntu | Docker's apt repo → `apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin` |
+| Fedora / RHEL | Docker's dnf repo → `dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin` |
+| Arch | `pacman -S docker docker-compose` |
+
+Prefer Docker's official repo so you get Compose **v2**. Some older setups — e.g.
+Debian 12 with the distro's own `docker-compose` package — only ship the legacy
+**v1** standalone, where the command is `docker-compose` (with a hyphen). It is
+otherwise identical: just swap `docker compose` → `docker-compose` in the steps.
+
+> Full per-distribution host setup (networking, storage, firewall, SELinux /
+> Podman notes) lives in the homelab build guide.
