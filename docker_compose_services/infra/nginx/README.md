@@ -1,6 +1,6 @@
 # nginx
 
-![nginx](../../assets/nginx.svg)
+![nginx](../../../assets/logos/nginx.svg)
 
 
 nginx is used as a reverse proxy and the single ingress point for internal
