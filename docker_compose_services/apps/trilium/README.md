@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../../assets/trilium.svg" width="180">
+  <img src="../../../assets/logos/trilium.svg" width="180">
 </p>
 
 <br>
