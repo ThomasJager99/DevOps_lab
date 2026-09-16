@@ -2,7 +2,7 @@ This directory contains an example deployment of Dockge, an open-source, self-ho
 
 
 <p align="center">
-  <img src="../../assets/dockge.svg" width="180">
+  <img src="../../../assets/logos/dockge.svg" width="180">
 </p>
 
 <br>
