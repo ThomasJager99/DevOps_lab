@@ -1,5 +1,13 @@
 # Docker Compose Services
 
+
+<p align="center">
+  <img src="../assets/termkujira.png" width="180">
+</p>
+
+<br>
+
+
 This directory collects the self-hosted services running in the homelab. Each
 service is a self-contained Docker Compose stack — its own `docker-compose` file,
 an example env and a README — and the stacks are grouped by purpose into the
