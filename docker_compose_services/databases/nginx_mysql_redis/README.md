@@ -1,18 +1,18 @@
 Multi-Service Stack: Nginx + MySQL + Redis
 
 <p align="center">
-  <img src="../../assets/mysql-logo.png" width="180">
+  <img src="../../../assets/logos/mysql-logo.png" width="180">
 </p>
 
 <br>
 
 
 <p align="center">
-  <img src="../../assets/nginx.svg" width="180">
+  <img src="../../../assets/logos/nginx.svg" width="180">
 </p>
 
 <p align="center">
-  <img src="../../assets/redis.png" width="180">
+  <img src="../../../assets/logos/redis.png" width="180">
 </p>
 
 
