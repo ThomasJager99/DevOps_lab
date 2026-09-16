@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../../assets/firefly-iii.svg" width="180">
+  <img src="../../../assets/logos/firefly-iii.svg" width="180">
 </p>
 
 <br>
