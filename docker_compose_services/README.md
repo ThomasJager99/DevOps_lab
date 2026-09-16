@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="../assets/termkujira.png" width="180">
+  <img src="../assets/mascot/termkujira.png" width="180">
 </p>
 
 <br>
