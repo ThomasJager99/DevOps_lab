@@ -9,7 +9,7 @@ control, with your library never leaving your server.
 
 
 <p align="center">
-  <img src="../../../assets/jellyfin.svg" width="180">
+  <img src="../../../assets/logos/jellyfin.svg" width="180">
 </p>
 
 <br>
