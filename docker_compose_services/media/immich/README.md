@@ -2,7 +2,7 @@ This directory contains an example deployment of Immich, a high-performance, ope
 
 
 <p align="center">
-  <img src="../../assets/immich.svg" width="180">
+  <img src="../../../assets/logos/immich.svg" width="180">
 </p>
 
 <br>
