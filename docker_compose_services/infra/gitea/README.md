@@ -2,7 +2,7 @@ This directory contains an example deployment of Gitea, a lightweight, open-sour
 
 
 <p align="center">
-  <img src="../../assets/gitea.svg" width="180">
+  <img src="../../../assets/logos/gitea.svg" width="180">
 </p>
 
 <br>
