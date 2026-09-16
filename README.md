@@ -42,6 +42,38 @@ Main components:
 
 ---
 
+## Requirements
+
+To run any stack in this repo you need:
+
+- **Docker Engine** + the **Docker Compose v2** plugin (`docker compose`, not the legacy `docker-compose`)
+- A Linux host — this lab runs on Debian, but any distro works
+
+The install step differs per distro; the run commands are identical everywhere.
+Quickest cross-distro install:
+
+```bash
+curl -fsSL https://get.docker.com | sh
+```
+
+…or use your distro's packages (Debian `apt`, Fedora `dnf`, Arch `pacman`, …)
+per the official docs: https://docs.docker.com/engine/install/
+
+Once Docker is installed, every service runs the same way:
+
+```bash
+cd docker_compose_services/<category>/<service>
+cp docker-compose.example.yml docker-compose.yml
+cp .env.example .env        # then edit .env
+docker compose up -d
+```
+
+> Full per-distribution host setup (packages, networking, storage, firewall,
+> SELinux / Podman notes) is covered separately in the homelab build guide.
+
+
+---
+
 ## Monitoring
 ```
                           ┌─────────────────────────┐
@@ -138,22 +170,28 @@ Example configuration:
 
 ## Repository Structure
 
-docker_services/  
-Contains docker-compose files for each service.
-Only infrastructure definitions, no data.
+```
+DevOps_lab/
+├── docker_compose_services/   # service stacks, grouped by category
+│   ├── media/                 #   video, audiobooks, comics, photos
+│   ├── apps/                  #   personal & productivity apps
+│   ├── infra/                 #   reverse proxy, dashboard, stack manager, git
+│   ├── observability/         #   metrics, logs, uptime
+│   └── databases/             #   data backends
+├── custom_dockerfile/         # custom container image definitions
+├── architecture/              # system design docs + backup strategy
+├── networking/                # network configuration docs
+├── server_building/           # host / OS setup docs
+├── servers/                # server configuration examples
+├── python_uthtion/         # p# Python automation scripts
+├── ops/                       # runbooks and operational scripts
+├── assets/                    # images used in the docs (logos, dashboards)
+└── .github/workflows/         # CI: shell + python linting
+```
 
-app_data/  
-Example structure for persistent application data.
-Used only as reference, not real data.
-
-ops/  
-Operational documentation and scripts.
-
-architecture/  
-High-level explanations of system design decisions.
-
-examples/  
-Sanitized examples of logs, configs and outputs.
+Each service under `docker_compose_services/` is a self-contained stack
+(`docker-compose` file + example env + README). The categories are indexed
+in `docker_compose_services/README.md`.
 
 ---
 
