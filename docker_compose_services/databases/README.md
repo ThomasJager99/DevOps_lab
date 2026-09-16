@@ -8,7 +8,7 @@
 ```
 
 <p align="center">
-  <img src="../../assets/brain_readme.png" width="200">
+  <img src="../../assets/mascot/brain_readme.png" width="200">
 </p>
 
 <br>
