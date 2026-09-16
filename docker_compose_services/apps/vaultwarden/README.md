@@ -2,7 +2,7 @@ This directory contains an example deployment of Vaultwarden, a lightweight, ope
 
 
 <p align="center">
-  <img src="../../assets/vaultwarden-light.svg" width="180">
+  <img src="../../../assets/logos/vaultwarden-light.svg" width="180">
 </p>
 
 <br>
