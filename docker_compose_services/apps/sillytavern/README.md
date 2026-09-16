@@ -1,7 +1,7 @@
 This directory contains an example configuration for deploying SillyTavern as a containerized service within a Docker network.
 
 <p align="center">
-  <img src="../../assets/sillytavern.png" width="180">
+  <img src="../../../assets/logos/sillytavern.png" width="180">
 </p>
 
 <br>
