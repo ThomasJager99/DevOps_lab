@@ -8,7 +8,7 @@
 ```
 
 <p align="center">
-  <img src="../../assets/makkokujira.png" width="200">
+  <img src="../../assets/mascot/makkokujira.png" width="200">
 </p>
 
 <br>
