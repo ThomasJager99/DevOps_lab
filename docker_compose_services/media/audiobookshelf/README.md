@@ -1,7 +1,7 @@
 # Audiobookshelf Service
 
 <p align="center">
-  <img src="../../assets/audiobookshelf.svg" width="180">
+  <img src="../../../assets/logos/audiobookshelf.svg" width="180">
 </p>
 
 <br>
