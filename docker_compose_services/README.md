@@ -82,5 +82,3 @@ Debian 12 with the distro's own `docker-compose` package — only ship the legac
 **v1** standalone, where the command is `docker-compose` (with a hyphen). It is
 otherwise identical: just swap `docker compose` → `docker-compose` in the steps.
 
-> Full per-distribution host setup (networking, storage, firewall, SELinux /
-> Podman notes) lives in the homelab build guide.
