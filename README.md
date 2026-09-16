@@ -1,7 +1,7 @@
 # DevOps Lab
 
 <p align="center">
-  <img src="assets/octopus.png" width="400">
+  <img src="assets/mascot/octopus.png" width="400">
 </p>
 
 Personal DevOps homelab used to practice Docker, Linux, networking, storage and backup strategies.
