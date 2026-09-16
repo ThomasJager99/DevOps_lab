@@ -15,6 +15,15 @@ It represents a cleaned and documented reference architecture based on a real ho
 
 ---
 
+### At a glance
+
+- 🐳 20+ self-hosted services, one Docker Compose stack each, grouped by category
+- 📊 Full observability stack — Prometheus, Grafana, Loki, Promtail, cAdvisor
+- 💾 Automated incremental backups (rsync) with retention + runbooks
+- ⚙️ CI on every push — ShellCheck + ruff via GitHub Actions
+- 🐧 Single-node Debian homelab, reverse-proxied with nginx
+
+---
 ## Goals
 
 - Practice Docker and docker-compose
