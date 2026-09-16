@@ -1,6 +1,10 @@
 # Kavita
 
-![kavita](../../assets/kavita.svg)
+<p align="center">
+  <img src="../../../assets/logos/kavita.svg" width="180">
+</p>
+
+<br>
 
 
 Kavita is a self-hosted digital library server for managing and reading e-books,
