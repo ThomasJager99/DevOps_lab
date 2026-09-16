@@ -2,7 +2,7 @@ This directory contains an example deployment of Paperless-ngx, an open-source d
 
 
 <p align="center">
-  <img src="../../assets/paperless-ngx.svg" width="180">
+  <img src="../../../assets/logos/paperless-ngx.svg" width="180">
 </p>
 
 <br>
