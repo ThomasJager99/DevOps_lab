@@ -1,7 +1,10 @@
 # nginx
 
-![nginx](../../../assets/logos/nginx.svg)
+<p align="center">
+  <img src="../../../assets/logos/nginx.svg" width="180">
+</p>
 
+<br>
 
 nginx is used as a reverse proxy and the single ingress point for internal
 services running inside a Docker-based infrastructure.
