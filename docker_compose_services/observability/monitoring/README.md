@@ -1,19 +1,19 @@
 # Monitoring Stack: Prometheus + Grafana + Node Exporter + cAdvisor
 
 <p align="center">
-  <img src="../../assets/grafana.svg" width="180">
+  <img src="../../../assets/logos/grafana.svg" width="180">
 </p>
 
 <br>
 
 <p align="center">
-  <img src="../../assets/prometheus.svg" width="180">
+  <img src="../../../assets/logos/prometheus.svg" width="180">
 </p>
 
 <br>
 
 <p align="center">
-  <img src="../../assets/cadvisor.png" width="180">
+  <img src="../../../assets/logos/cadvisor.png" width="180">
 </p>
 
 <br>
