@@ -1,6 +1,10 @@
 # Komga
 
-![komga](../../assets/komga.svg)
+<p align="center">
+  <img src="../../../assets/logos/komga.svg" width="180">
+</p>
+
+<br>
 
 
 Komga is a self-hosted media server designed for managing and reading comics,
