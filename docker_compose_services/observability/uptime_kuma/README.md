@@ -3,7 +3,7 @@ This directory contains an example deployment of Uptime Kuma, an open-source sel
 ## Image
 
 <p align="center">
-  <img src="../../assets/uptime-kuma.svg" width="180">
+  <img src="../../../assets/logos/uptime-kuma.svg" width="180">
 </p>
 
 <br>
