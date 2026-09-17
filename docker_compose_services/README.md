@@ -19,7 +19,7 @@ copy and fill in.
 
 <table>
   <tr>
-    <td width="80" align="center"><a href="media/"><img src="../assets/logos/clapperboard.svg" width="64" alt="Media"></a></td>
+    <td width="80" align="center"><a href="media/"><img src="../assets/icons/clapperboard.svg" width="64" alt="Media"></a></td>
     <td><a href="media/"><b>Media</b></a><br>Streaming and libraries for video, audiobooks, comics and photos.</td>
   </tr>
   <tr>
