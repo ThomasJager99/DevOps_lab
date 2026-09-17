@@ -1,6 +1,12 @@
 # Glances
 
-![glances](../../assets/glances-light.svg)
+
+<p align="center">
+  <img src="../../../assets/logos/glances-light.svg" width="180">
+</p>
+
+<br>
+
 
 Glances is a lightweight, cross-platform monitoring tool that provides real-time
 system and container metrics through a web-based interface.
