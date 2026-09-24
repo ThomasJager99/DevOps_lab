@@ -135,7 +135,7 @@ All other services communicate internally through the Docker network.
 
 The monitoring example:
 
-[Monitoring Setup Guide](docker_compose_services/monitoring)
+[Monitoring Setup Guide](docker_compose_services/observability/monitoring)
 
 ---
 
@@ -150,7 +150,7 @@ Backup scripts, snapshot logic, and retention strategy are implemented in:
 ## Infrastructure Dashboard
 
 <p align="center">
-  <img src="assets/homepage.png" width="180">
+  <img src="assets/logos/homepage.png" width="180">
 </p>
 
 <br>
@@ -173,7 +173,7 @@ Example deployment configuration is available in:
 docker_compose_services/homepage/
 
 Example configuration:
-[docker_compose_services/homepage](docker_compose_services/homepage)
+[Homepage](docker_compose_services/infra/homepage)
 
 ---
 
