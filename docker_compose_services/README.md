@@ -77,8 +77,49 @@ Or install from your distro's packages:
 | Fedora / RHEL | Docker's dnf repo → `dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin` |
 | Arch | `pacman -S docker docker-compose` |
 
+
 Prefer Docker's official repo so you get Compose **v2**. Some older setups — e.g.
 Debian 12 with the distro's own `docker-compose` package — only ship the legacy
 **v1** standalone, where the command is `docker-compose` (with a hyphen). It is
 otherwise identical: just swap `docker compose` → `docker-compose` in the steps.
+
+---
+
+## Services
+
+### [Apps](apps/)
+- [Firefly III](apps/firefly/) — personal finance manager (accounts, budgets, reports)
+- [Paperless-ngx](apps/paperless-ngx/) — document management with OCR & full-text search
+- [Portainer](apps/portainer/) — web UI for managing Docker
+- [SillyTavern](apps/sillytavern/) — front-end for chatting with LLMs / AI characters
+- [Stirling-PDF](apps/stirling-pdf/) — web toolkit for PDF operations (merge, split, OCR, convert)
+- [Trilium](apps/trilium/) — hierarchical note-taking / knowledge base
+- [Vaultwarden](apps/vaultwarden/) — password manager server (Bitwarden-compatible)
+- [Wekan](apps/wekan/) — kanban board (Trello alternative)
+- [Linkwarden](apps/linkwarden/) — bookmark manager that archives pages (screenshot, PDF, full text) and searches them
+
+### [Media](media/)
+- [Audiobookshelf](media/audiobookshelf/) — audiobook & podcast server
+- [Immich](media/immich/) — photo & video backup with ML search (Google Photos alternative)
+- [Jellyfin](media/jellyfin/) — media server for movies, shows & music
+- [Kavita](media/kavita/) — reader/server for ebooks, comics & manga
+- [Komga](media/komga/) — comics, manga & digital book library server
+- [Navidrome](media/navidrome/) — music server (Subsonic-compatible) with offline apps
+
+### [Infra](infra/)
+- [Dockge](infra/dockge/) — web manager for Docker Compose stacks
+- [Gitea](infra/gitea/) — self-hosted Git service (repos, issues, CI)
+- [Homepage](infra/homepage/) — dashboard / start page for all services
+- [Nginx](infra/nginx/) — reverse proxy / web server
+- [Transmission VPN hub](infra/transmission-vpn-hub/) — VPN gateway (gluetun) + Transmission; route any service through the VPN
+
+### [Observability](observability/)
+- [Glances](observability/glances/) — live system resource monitor
+- [Monitoring](observability/monitoring/) — Prometheus + Grafana + Loki metrics & logs stack
+- [Uptime Kuma](observability/uptime_kuma/) — uptime monitoring & status pages
+
+### [Databases](databases/)
+- [MySQL](databases/mysql/) — MySQL/MariaDB instance for development & learning
+- [MySQL (prod)](databases/mysql_prod/) — production MySQL/MariaDB instance
+- [Nginx + MySQL + Redis](databases/nginx_mysql_redis/) — bundled backend stack (proxy + database + cache)
 
