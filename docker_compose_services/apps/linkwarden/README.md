@@ -9,7 +9,7 @@ later" and bookmarking services, on hardware you control.
 
 
 <p align="center">
-  <img src="../../../assets/logos/trilium.svg" width="180">
+  <img src="../../../assets/logos/linkwarden.png" width="180">
 </p>
 
 <br>
