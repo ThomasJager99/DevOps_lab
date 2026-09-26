@@ -98,6 +98,7 @@ otherwise identical: just swap `docker compose` → `docker-compose` in the step
 - [Wekan](apps/wekan/) — kanban board (Trello alternative)
 - [Linkwarden](apps/linkwarden/) — bookmark manager that archives pages (screenshot, PDF, full text) and searches them
 - [Mealie](apps/mealie/) — recipe manager & meal planner (imports recipes from a URL)
+- [IT-Tools](apps/it-tools/) — ~100 handy developer/IT utilities in the browser
 
 ### [Media](media/)
 - [Audiobookshelf](media/audiobookshelf/) — audiobook & podcast server
